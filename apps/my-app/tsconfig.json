@@ -33,9 +33,14 @@
     ".next/types/**/*.ts",
     "next.config.mjs",
     "nativewind-env.d.ts",
-    "tailwind-variants.d.ts"
+    "tailwind-variants.d.ts",
+    "src"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    ".next",
+    "out",
+    "dist",
+    ".turbo"
   ]
 }

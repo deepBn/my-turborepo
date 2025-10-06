@@ -1,6 +1,7 @@
 import { Box } from '@/components/ui/box';
 import { Text } from '@/components/ui/text';
 import Image from 'next/image';
+import { Button } from '@repo/ui';
 
 export default function Home() {
   return (
@@ -47,6 +48,7 @@ const Container = () => {
         </Box>
         <Box className="flex-1 justify-center items-center h-[20px] w-[300px] lg:h-[160px] lg:w-[400px]">
           <Image src="/logo.svg" fill alt="logo" priority />
+          <Button text="New world" />
         </Box>
 
         <Box className="flex-column md:flex-row">

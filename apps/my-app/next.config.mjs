@@ -9,8 +9,24 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  transpilePackages: [],
-  webpack: (config) => {
+  transpilePackages: ["@repo/ui"],
+  webpack: (config, { dev }) => {
+    // Fix infinite recompilation loop by configuring webpack watch options
+    if (dev) {
+      config.watchOptions = {
+        ...config.watchOptions,
+        ignored: [
+          '**/node_modules/**',
+          '**/.next/**',
+          '**/.git/**',
+          '**/.turbo/**',
+        ],
+        // Reduce CPU usage
+        poll: 1000,
+        aggregateTimeout: 300,
+      };
+    }
+    
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
       // Transform all direct `react-native` imports to `react-native-web`
