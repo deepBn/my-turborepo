@@ -19,7 +19,7 @@
         "./utils/*"
       ],
       "@/components/*": [
-        "./components/*"
+        "./src/components/*"
       ],
       "tailwind.config": [
         "./tailwind.config.js"
