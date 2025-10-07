@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Button } from "@repo/ui";
+import { Progress, ProgressFilledTrack } from "@/components/ui/progress";
 
 export default function Native() {
   return (
@@ -13,6 +14,9 @@ export default function Native() {
         }}
         text="Boop"
       />
+      <Progress value={40} size="md" orientation="horizontal">
+        <ProgressFilledTrack />
+      </Progress>
       <StatusBar style="auto" />
     </View>
   );
